@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
-  <script src="https://sdk.altvr.com/libs/altspace.js/2.0.3/altspace.min.js"></script>
+  <script src="https://sdk.altvr.com/libs/altspace.js/2.2.0/altspace.min.js"></script>
   <script>
     // n-skeleton-parent only works with root meshes at the moment. Since most model loaders use a root
     // container object, we need to collapse the model so that n-skeleton-parent can access the mesh directly.
@@ -69,6 +69,27 @@
         <a-mixin id="parent-to-head" position="0 0.04 -0.09" scale="1.40 1.40 1.40" rotation="0 90 0" n-skeleton-parent="part:head;" sync sync-n-skeleton-parent></a-mixin>
 
       </a-assets>
+      
+        <!-- Basic plane. -->
+  <a-box color="white"position='1 11.60 -2' opacity="0" depth="0.01" height="14" width="17" rotation="90 0 0" n-mesh-collider="type: environment; convex: false" side="double"></a-box>
+      
+      <!--portal-->
+     
+	<a-entity position='2 11.60 0' rotation='0 -90 0' n-portal='targetSpace: experience-space-621989866128802364'></a-entity>
+      
+      <!--portal 2-->
+     
+	<a-entity position='2 11.60 -2' rotation='0 -90 0' n-portal='targetSpace: experience-space-577809242975634185'></a-entity>
+      
+       <!--portal 3-->
+     
+	<a-entity position='2 11.60 -4' rotation='0 -90 0' n-portal='targetSpace: experience-space-582151576857084313'></a-entity>
+      
+      <!--portal 4-->
+     
+	<a-entity position='2 11.60 -6' rotation='0 -90 0' n-portal='targetSpace: lia-s-space'></a-entity>
+
+
       <!--sky-->
       <a-sky radius="300" src="https://rawgit.com/Lia021/hunted-birthday/master/star.jpg"></a-sky>
 
@@ -97,7 +118,7 @@
 
       <!--model 6-->
 
-      <a-entity position="-5.30 2.80 4.50" rotation="0 0 0" mixin="eye-mask" instantiator="on: click; group: eye-mask; mixin: eye-mask parent-to-head"></a-entity>
+      <a-entity position="-5.30 2.80 4.50" rotation="0 0 0" mixin="eye-mask" instantiator="on: click; group: mask; mixin: eye-mask parent-to-head"></a-entity>
 
       <!--table-->
       <a-entity position="-2.54 0.50 -5.90" scale="1.50 2.50 1.50" n-mesh-collider="type: environment; convex: false" collada-model="#table"></a-entity>
@@ -132,10 +153,22 @@
 
       <!-- Basic circle. -->
       <a-circle src="https://rawgit.com/Lia021/hunted-birthday/master/star.jpg" position="-2.54 0.41 -5.90" side="double" opacity="0.9" radius="1.95" rotation="90 0 0"></a-circle>
+<!--test-->
+    <a-entity n-object='res: effects/fire'position="0 1 0"rotation="0 181 0"></a-entity>  
 
+       <!--campfire-->
+    <a-entity n-billboard n-text="fontSize: 3; text:Lia-campfire" position="2 14.05 0"></a-entity>
+      
+       <!--tavern-->
+    <a-entity n-billboard n-text="fontSize: 3; text:Lia-tavern" position="2 14.05 -2"></a-entity>
+      
+      <!--threatre-->
+    <a-entity n-billboard n-text="fontSize: 3; text:Lia-theatre" position="2 14.05 -4"></a-entity>
+      
+       <!--blue-->
+    <a-entity n-billboard n-text="fontSize: 3; text:Lia-Bluespace" position="2 14.05 -6"></a-entity>
 
 
   </body>
 
 </html>
-  
