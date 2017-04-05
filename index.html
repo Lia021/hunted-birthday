@@ -57,6 +57,7 @@
         <a-asset-item id="mask" src="https://rawgit.com/Lia021/hunted-birthday/master/mask%203/untitled.dae"></a-asset-item>
         <a-asset-item id="eye-mask-model" src="https://rawgit.com/Lia021/hunted-birthday/master/eye%20mask/untitled.dae"></a-asset-item>
         <a-asset-item id="table" src="https://rawgit.com/Lia021/hunted-birthday/master/light%20wood%20table/untitled.dae"></a-asset-item>
+        <a-asset-item id="ooblik" src="https://rawgit.com/Lia021/hunted-birthday/master/ooblik/untitled2.dae"></a-asset-item>
 
         <a-mixin id="b-mic" collada-model="#b-mic" collapse-model></a-mixin>
 
@@ -123,6 +124,9 @@
       <!--table-->
       <a-entity position="-2.54 0.50 -5.90" scale="1.50 2.50 1.50" n-mesh-collider="type: environment; convex: false" collada-model="#table"></a-entity>
 
+      <!--ooblik-->
+      <a-entity position="-2.74 1.30 -5.90" scale="1.60 1.60 1.60" rotation="0 90 0" collada-model="#ooblik"></a-entity>
+      
       <!--plant1-->
       <a-entity position="-4.55 4.05 5.10" scale="1.50 1.50 1.50" rotation="0 90 0" collada-model="#eye"></a-entity>
       <!--plant2-->
@@ -154,7 +158,7 @@
       <!-- Basic circle. -->
       <a-circle src="https://rawgit.com/Lia021/hunted-birthday/master/star.jpg" position="-2.54 0.41 -5.90" side="double" opacity="0.9" radius="1.95" rotation="90 0 0"></a-circle>
 <!--test-->
-    <a-entity n-object='res: effects/fire'position="0 1 0"rotation="0 181 0"></a-entity>  
+    <a-entity n-object='res: effects/fire'position="-2.74 2 -5.90"rotation="0 181 0"></a-entity>  
 
        <!--campfire-->
     <a-entity n-billboard n-text="fontSize: 3; text:Lia-campfire" position="2 14.05 0"></a-entity>
