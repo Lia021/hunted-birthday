@@ -58,6 +58,7 @@
         <a-asset-item id="eye-mask-model" src="https://rawgit.com/Lia021/hunted-birthday/master/eye%20mask/untitled.dae"></a-asset-item>
         <a-asset-item id="table" src="https://rawgit.com/Lia021/hunted-birthday/master/light%20wood%20table/untitled.dae"></a-asset-item>
         <a-asset-item id="ooblik" src="https://rawgit.com/Lia021/hunted-birthday/master/ooblik/untitled2.dae"></a-asset-item>
+        <a-asset-item id="ben" src="https://rawgit.com/Lia021/hunted-birthday/master/ben/untitled.dae"></a-asset-item>
 
         <a-mixin id="b-mic" collada-model="#b-mic" collapse-model></a-mixin>
 
@@ -89,6 +90,10 @@
       <!--portal 4-->
      
 	<a-entity position='2 11.60 -6' rotation='0 -90 0' n-portal='targetSpace: lia-s-space'></a-entity>
+
+   <!--portal 5-->
+     
+	<a-entity position='2 11.60 4' rotation='0 -90 0' n-portal='targetSpace: experience-space-617511745128235267'></a-entity>
 
 
       <!--sky-->
@@ -127,6 +132,9 @@
       <!--ooblik-->
       <a-entity position="-2.74 1.30 -5.90" scale="1.60 1.60 1.60" rotation="0 90 0" collada-model="#ooblik"></a-entity>
       
+         <!--Ben-->
+      <a-entity position="2.10 0.50 4.80" scale="1.60 1.60 1.60" rotation="0 0 0" collada-model="#ben"></a-entity>
+
       <!--plant1-->
       <a-entity position="-4.55 4.05 5.10" scale="1.50 1.50 1.50" rotation="0 90 0" collada-model="#eye"></a-entity>
       <!--plant2-->
@@ -171,6 +179,9 @@
       
        <!--blue-->
     <a-entity n-billboard n-text="fontSize: 3; text:Lia-Bluespace" position="2 14.05 -6"></a-entity>
+
+     <!--christmas-->
+    <a-entity n-billboard n-text="fontSize: 3; text:Lia-christmas" position="2 14.05 4"></a-entity>
 
 
   </body>
