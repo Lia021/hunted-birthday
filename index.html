@@ -61,6 +61,7 @@
         <a-asset-item id="ben" src="https://rawgit.com/Lia021/hunted-birthday/master/ben2/untitled.dae"></a-asset-item>
         <a-asset-item id="evil" src="https://rawgit.com/Lia021/hunted-birthday/master/evil/untitled.dae"></a-asset-item>
         <a-asset-item id="zar-zar" src="https://rawgit.com/Lia021/hunted-birthday/master/ZAR%20ZAR/untitled.dae"></a-asset-item>
+        <a-asset-item id="jacob" src="https://rawgit.com/Lia021/hunted-birthday/master/jacob/untitled.dae"></a-asset-item>
 
         <a-mixin id="b-mic" collada-model="#b-mic" collapse-model></a-mixin>
 
@@ -147,6 +148,9 @@
        <!--zar-zar-->
       <a-entity position="-5.45 3.30 0.53" scale="3 3 3" rotation="0 0 0" collada-model="#zar-zar"></a-entity>
 
+      <!--jacob-->
+      <a-entity position="-3 -0.80 18" scale="12 12 12" rotation="0 -170 0" collada-model="#jacob"n-mesh-collider="type: environment; convex: false"></a-entity>
+
       <!--plant1-->
       <a-entity position="-4.55 4.05 5.10" scale="1.50 1.50 1.50" rotation="0 90 0" collada-model="#eye"></a-entity>
       <!--plant2-->
@@ -177,8 +181,11 @@
 
       <!-- Basic circle. -->
       <a-circle src="https://rawgit.com/Lia021/hunted-birthday/master/star.jpg" position="-2.54 0.41 -5.90" side="double" opacity="0.9" radius="1.95" rotation="90 0 0"></a-circle>
-<!--test-->
+<!--fire bowl-->
     <a-entity n-object='res: effects/fire'position="-2.74 2 -5.90"rotation="0 181 0"></a-entity>  
+
+<!--fire-->
+    <a-entity n-object='res: effects/fire-trail'position="-3.30 0.50 16.60"rotation="0 -170 0"><a-animation attribute="position" direction='alternate' from='-3.30 0.50 16.60' to='-3.30 0.50 15' ease-in-out='linear' dur='900' repeat='indefinite'/></a-entity> 
 
        <!--campfire-->
     <a-entity n-billboard n-text="fontSize: 3; text:Lia-campfire" position="2 14.05 0"></a-entity>
