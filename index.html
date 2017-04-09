@@ -204,9 +204,13 @@
     <a-entity n-billboard n-text="fontSize: 3; text:Lia-boxing" position="2 14.05 2"></a-entity>
 
 <!--sphere-->
-    <a-sphere src="https://rawgit.com/Lia021/hunted-birthday/master/743187main_terra_10th_first_light_map_lrg-full_full.jpg" radius="3" position="0 3 -35" side="double">
-      <a-animation attribute="rotation" dur="12000" fill="forwards" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
-    </a-sphere>
+<a-entity position="0 5 0">
+  <a-sphere src="https://rawgit.com/Lia021/hunted-birthday/master/743187main_terra_10th_first_light_map_lrg-full_full.jpg" n-mesh-collider="type: environment; convex: false"radius="5" position="0 3 90">
+   <a-animation attribute="rotation" dur="19000" easing="linear" repeat="indefinite" from="0 0 0" to="0 360 0"></a-animation>
+  </a-sphere>
+  <a-animation attribute="rotation" dur="190000" easing="linear" repeat="indefinite" from="0 0 0" to="0 -360 0"></a-animation>
+</a-entity>
+    
 
   </body>
 
