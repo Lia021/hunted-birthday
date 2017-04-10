@@ -143,7 +143,7 @@
       <a-entity position="-2.74 1.30 -5.90" scale="1.60 1.60 1.60" rotation="0 90 0" collada-model="#ooblik"></a-entity>
 
        <!--fae-->
-      <a-entity position="4 -0.02 -8.67" scale="7 7 7" rotation="0 -90 0" collada-model="#fae"></a-entity>
+      <a-entity position="4 -0.02 -8.67" scale="7 7 7" rotation="0 -90 0"n-mesh-collider="type: environment; convex: false" collada-model="#fae"></a-entity>
       
          <!--Ben-->
       <a-entity position="2.30 0.50 4.80" scale="3 3 3" rotation="0 90 0" collada-model="#ben"></a-entity>
@@ -166,7 +166,12 @@
       <a-entity position="-4.65 4.05 5.10" scale="1.50 1.50 1.50" rotation="0 90 0" collada-model="#eye"></a-entity>
       <!--plant3-->
       <a-entity position="-4.62 3.95 5.09" scale="1.50 1.50 1.50" rotation="0 90 0" collada-model="#eye"></a-entity>
-
+<!--fae song-->
+<a-entity position="4 1 -8.40">
+      <a-entity id="pc-fae"sync="own-on: fae" sync-n-sound n-sound="on:fae; src:https://cdn.rawgit.com/Lia021/sound/master/The_Temptations_-_My_Girl.ogg;"></a-entity>
+      <a-entity  id="gear-fae"sync="own-on: fae song" sync-n-sound n-sound="on:fae; src:https://cdn.rawgit.com/Lia021/sound/master/The%20Temptations%20-%20My%20Girl.mp3;"></a-entity>
+      <a-box  wire="on: click; emit: fae; targets: #pc-fae, #gear-fae;" opacity="0" depth="0.3" height="0.3" width="0.3" color="#A7B7BC"></a-box>
+    </a-entity>
 
       <!--image1-->
       <a-image position="-5.50 5.40 -1.10" src="https://rawgit.com/Lia021/hunted-birthday/master/star.jpg" opacity="0.5" altspace-cursor-collider="enabled: false" rotation="0 90 0" width="9.50" height="9.70">
