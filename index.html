@@ -65,6 +65,8 @@
         <a-asset-item id="ducky" src="https://rawgit.com/Lia021/hunted-birthday/master/ducky/untitled.dae"></a-asset-item>
           <a-asset-item id="fae" src="https://rawgit.com/Lia021/hunted-birthday/master/fae/untitled.dae"></a-asset-item>
           <a-asset-item id="lisa" src="https://rawgit.com/Lia021/hunted-birthday/master/lisa/untitled.dae"></a-asset-item>
+          <a-asset-item id="no" src="https://rawgit.com/Lia021/hunted-birthday/master/faceman/no.dae"></a-asset-item>
+          <a-asset-item id="yes" src="https://rawgit.com/Lia021/hunted-birthday/master/faceman/yes.dae"></a-asset-item>
 
 
         <a-mixin id="b-mic" collada-model="#b-mic" collapse-model></a-mixin>
@@ -152,6 +154,12 @@
       <!--evil-->
       <a-entity position="5 -1 17" scale="12 12 12" rotation="0 90 0" collada-model="#evil"n-mesh-collider="type: environment; convex: false"></a-entity>
 
+       <!--no-->
+      <a-entity position="-1 -0.20 15" scale="15 15 15" rotation="0 90 0" collada-model="#no"n-mesh-collider="type: environment; convex: false"></a-entity>
+
+       <!--yes-->
+      <a-entity position="-6 -0.50 17" scale="11 11 11" rotation="0 90 0" collada-model="#yes"n-mesh-collider="type: environment; convex: false"></a-entity>
+
        <!--zar-zar-->
       <a-entity position="-5.45 3.30 0.53" scale="3 3 3" rotation="0 0 0" collada-model="#zar-zar"></a-entity>
 
@@ -172,9 +180,23 @@
       <a-entity position="-4.62 3.95 5.09" scale="1.50 1.50 1.50" rotation="0 90 0" collada-model="#eye"></a-entity>
 <!--fae song-->
 <a-entity position="4 1 -8.40">
-      <a-entity id="pc-fae"sync="own-on: fae" sync-n-sound n-sound="on:fae; src:https://cdn.rawgit.com/Lia021/sound/master/The_Temptations_-_My_Girl.ogg;"></a-entity>
-      <a-entity  id="gear-fae"sync="own-on: fae song" sync-n-sound n-sound="on:fae; src:https://cdn.rawgit.com/Lia021/sound/master/The%20Temptations%20-%20My%20Girl.mp3;"></a-entity>
-      <a-box  wire="on: click; emit: fae; targets: #pc-fae, #gear-fae;" opacity="0" depth="0.3" height="0.3" width="0.3" color="#A7B7BC"></a-box>
+        <a-entity id="pc-fae" n-sound="on:fae; src:https://cdn.rawgit.com/Lia021/sound/master/The_Temptations_-_My_Girl.ogg;"></a-entity>
+      <a-entity id="gear-fae" n-sound="on:fae; src:https://cdn.rawgit.com/Lia021/sound/master/The%20Temptations%20-%20My%20Girl.mp3;"></a-entity>
+      <a-box wire="on: click; emit: fae; targets: #pc-fae ,#gear-fae;"opacity="0" depth="0.3" height="0.3" width="0.3" color="black"></a-box>
+    </a-entity>
+
+    <!--no-->
+<a-entity position="-2 0.10 15">
+      <a-entity id="pc-no"sync="own-on: no" sync-n-sound n-sound="on:no; src:https://cdn.rawgit.com/Lia021/sound/master/%5BSound_Effect_Knuckles_-_Oh_No_.ogg;"></a-entity>
+      <a-entity  id="gear-no"sync="own-on: no" sync-n-sound n-sound="on:fae; src::https://cdn.rawgit.com/Lia021/sound/master/%5BSound%20Effect%5D%20Knuckles%20-%20Oh%20No!.mp3;"></a-entity>
+      <a-box  wire="on: click; emit: no; targets: #pc-no, #gear-no;" opacity="0" depth="0.3" height="0.5" width="0.5" color="#A7B7BC"></a-box>
+    </a-entity>
+
+    <!--yes-->
+<a-entity position="-8 0.10 17">
+      <a-entity id="pc-yes"sync="own-on: yes" sync-n-sound n-sound="on:yes; src:https://cdn.rawgit.com/Lia021/sound/master/Undertale_Sound_Effect_-_Oh_Yes.ogg;"></a-entity>
+      <a-entity  id="gear-yes"sync="own-on: yes" sync-n-sound n-sound="on:yes; src:https://cdn.rawgit.com/Lia021/sound/master/Undertale%20Sound%20Effect%20-%20Oh%20Yes.mp3;"></a-entity>
+      <a-box  wire="on: click; emit: yes; targets: #pc-yes, #gear-yes;" opacity="0" depth="0.3" height="0.5" width="0.5" color="#A7B7BC"></a-box>
     </a-entity>
 
       <!--image1-->
