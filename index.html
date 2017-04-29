@@ -67,6 +67,7 @@
           <a-asset-item id="no" src="https://rawgit.com/Lia021/hunted-birthday/master/faceman/no.dae"></a-asset-item>
           <a-asset-item id="yes" src="https://rawgit.com/Lia021/hunted-birthday/master/faceman/yes.dae"></a-asset-item>
           <a-asset-item id="me" src="https://rawgit.com/Lia021/hunted-birthday/master/me/untitled.dae"></a-asset-item>
+          <a-asset-item id="faceman-head" src="https://rawgit.com/Lia021/hunted-birthday/master/faceman%20head/faceman%20head.dae"></a-asset-item>
 
 
         <a-mixin id="b-mic" collada-model="#b-mic" collapse-model></a-mixin>
@@ -164,7 +165,7 @@
       <a-entity position="-5.45 3.30 0.53" scale="3 3 3" rotation="0 0 0"altspace-cursor-collider="enabled: false" collada-model="#zar-zar"></a-entity>
 
       <!--me-->
-      <a-entity position="-50 7 0.53" scale="30 30 30" rotation="0 0 0" n-mesh-collider="type: environment; convex: false"collada-model="#me"></a-entity>
+      <a-entity position="-40 0 0.53" scale="40 40 40" rotation="0 0 0" n-mesh-collider="type: environment; convex: false"collada-model="#me"></a-entity>
 
        <!--Lisa-->
       <a-entity position="-12.50 1 -18.50" scale="3 3 3" rotation="0 -50 0"n-mesh-collider="type: environment; convex: false" collada-model="#lisa"></a-entity>
@@ -174,6 +175,10 @@
 
        <!--ducky-->
       <a-entity position="0 -0.15 7.50" scale="4 4 4" rotation="0 0 0"altspace-cursor-collider="enabled: false" collada-model="#ducky"></a-entity>
+
+       <!--faceman-head-->
+      <a-entity position="0 -0.20 -30" scale="20 20 20" rotation="0 0 0" collada-model="#faceman-head"n-mesh-collider="type: environment; convex: false"></a-entity>
+
 
       <!--plant1-->
       <a-entity position="-4.55 4.05 5.10" scale="1.50 1.50 1.50" rotation="0 90 0" collada-model="#eye"></a-entity>
