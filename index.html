@@ -9,7 +9,7 @@
   <script>
     // n-skeleton-parent only works with root meshes at the moment. Since most model loaders use a root
     // container object, we need to collapse the model so that n-skeleton-parent can access the mesh directly.
-    AFRAME.registerComponent('collapse-model', {
+     AFRAME.registerComponent('collapse-model', {
         init: function () {
             this.el.addEventListener('model-loaded', function () {
                 this.el.object3DMap.mesh.updateMatrixWorld();
@@ -20,6 +20,7 @@
                     }
                 }.bind(this))
                 if (mesh) {
+                    this.el.sceneEl.object3D.updateMatrixWorld(true);
                     mesh.scale.copy(mesh.getWorldScale());
                     this.el.setObject3D('mesh', mesh);
                     // setObject3D emits this event in a-frame 0.4.0
@@ -202,8 +203,8 @@
 
     <!--yes-->
 <a-entity position="-8 0.10 17">
-      <a-entity id="pc-yes"sync="own-on: yes" sync-n-sound n-sound="on:yes; src:https://cdn.rawgit.com/Lia021/sound/master/Undertale_Sound_Effect_-_Oh_Yes.ogg;"></a-entity>
-      <a-entity  id="gear-yes"sync="own-on: yes" sync-n-sound n-sound="on:yes; src:https://cdn.rawgit.com/Lia021/sound/master/Undertale%20Sound%20Effect%20-%20Oh%20Yes.mp3;"></a-entity>
+      <a-entity id="pc-yes"sync="own-on: yes" sync-n-sound n-sound="on:yes; src:https://cdn.rawgit.com/Lia021/sound/master/sound_-_yes.ogg;"></a-entity>
+      <a-entity  id="gear-yes"sync="own-on: yes" sync-n-sound n-sound="on:yes; src:https://cdn.rawgit.com/Lia021/sound/master/sound%20-%20yes.mp3;"></a-entity>
       <a-box  wire="on: click; emit: yes; targets: #pc-yes, #gear-yes;" opacity="0" depth="0.3" height="0.5" width="0.5" color="#A7B7BC"></a-box>
     </a-entity>
 
