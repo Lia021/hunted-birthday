@@ -57,6 +57,8 @@
         <a-asset-item id="mask" src="https://rawgit.com/Lia021/hunted-birthday/master/mask%203/untitled.dae"></a-asset-item>
         <a-asset-item id="eye-mask-model" src="https://rawgit.com/Lia021/hunted-birthday/master/eye%20mask/untitled.dae"></a-asset-item>
         <a-asset-item id="table" src="https://rawgit.com/Lia021/hunted-birthday/master/light%20wood%20table/untitled.dae"></a-asset-item>
+        <a-asset-item id="cake" src="https://rawgit.com/Lia021/hunted-birthday/master/cake/cake.dae"></a-asset-item>
+       
        
         <a-mixin id="b-mic" collada-model="#b-mic" collapse-model></a-mixin>
 
@@ -104,7 +106,7 @@
 
       <!--model 5-->
 
-      <a-entity position="-2.54 1.35 -5.90" mixin="b-mic" rotation="90 0 0" instantiator="on: click;group: b-mic; mixin: b-mic parent-to-right-hand"></a-entity>
+      <a-entity position="-2.40 1.35 -5.90" mixin="b-mic" rotation="90 0 0" instantiator="on: click;group: b-mic; mixin: b-mic parent-to-right-hand"></a-entity>
 
       <!--model 6-->
 
@@ -112,6 +114,11 @@
 
       <!--table-->
       <a-entity position="-2.54 0.50 -5.90" scale="1.50 2.50 1.50" n-mesh-collider="type: environment; convex: false" collada-model="#table"></a-entity>
+
+
+      <!--cake-->
+      <a-entity position="-2.74 1.34 -5.90" scale="1.60 1.60 1.60"altspace-cursor-collider="enabled: false" rotation="0 -70 0" collada-model="#cake"></a-entity>
+
 
       <!--plant1-->
       <a-entity position="-4.55 4.05 5.10" scale="1.50 1.50 1.50" rotation="0 90 0" collada-model="#eye"></a-entity>
@@ -160,7 +167,7 @@
  
 
        <!--campfire-->
-    <a-entity n-billboard n-text="fontSize: 3; text:Lia-Campfire" position="2 14.05 0"></a-entity>
+    <a-entity n-billboard n-text="fontSize: 3; text:Lia-crazy" position="2 14.05 0"></a-entity>
       
    
 <!--inclser-->
