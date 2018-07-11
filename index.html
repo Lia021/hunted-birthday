@@ -4,34 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
-  <script src="https://sdk.altvr.com/libs/altspace.js/2.4.5/altspace.min.js"></script>
-  <script>
-    // n-skeleton-parent only works with root meshes at the moment. Since most model loaders use a root
-    // container object, we need to collapse the model so that n-skeleton-parent can access the mesh directly.
-     AFRAME.registerComponent('collapse-model', {
-        init: function () {
-            this.el.addEventListener('model-loaded', function () {
-                this.el.object3DMap.mesh.updateMatrixWorld();
-                var mesh;
-                this.el.object3DMap.mesh.traverse(function (obj) {
-                    if (!mesh && obj instanceof THREE.Mesh) {
-                        mesh = obj;
-                    }
-                }.bind(this))
-                if (mesh) {
-                    this.el.sceneEl.object3D.updateMatrixWorld(true);
-                    mesh.scale.copy(mesh.getWorldScale());
-                    this.el.setObject3D('mesh', mesh);
-                    // setObject3D emits this event in a-frame 0.4.0
-                    this.el.emit('object3dset', {
-                        type: 'mesh'
-                    });
-                }
-            }.bind(this));
-        }
-    });
-  </script>
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="https://sdk.altvr.com/libs/altspace.js/2.9.0/altspace.min.js"></script>
   <script>
     altspace.getThreeJSTrackingSkeleton().then(function (skeleton) {
           window.head = skeleton.getJoint('Head');
@@ -46,69 +20,34 @@
           }
         })
   </script>
+
+ 
+
   <body>
     <a-scene altspace=fullspace:true sync-system="author: bookgirl; app: hunted house">
       <a-assets>
-        <a-asset-item id="eye-blue" src="https://rawgit.com/Lia021/hunted-birthday/master/eyes/blue%20eye.dae"></a-asset-item>
-        <a-asset-item id="eye-green" src="https://rawgit.com/Lia021/hunted-birthday/master/eyes/green-eye.dae"></a-asset-item>
-        <a-asset-item id="eye-brown" src="https://rawgit.com/Lia021/hunted-birthday/master/eyes/brown%20eye.dae"></a-asset-item>
-        <a-asset-item id="eye" src="https://rawgit.com/Lia021/hunted-birthday/master/eye%20plant/untitled.dae"></a-asset-item>
-        <a-asset-item id="b-mic" src="https://rawgit.com/Lia021/hunted-birthday/master/b-mic/b-mic.dae"></a-asset-item>
-        <a-asset-item id="mask" src="https://rawgit.com/Lia021/hunted-birthday/master/mask%203/untitled.dae"></a-asset-item>
-        <a-asset-item id="eye-mask-model" src="https://rawgit.com/Lia021/hunted-birthday/master/eye%20mask/untitled.dae"></a-asset-item>
         <a-asset-item id="table" src="https://rawgit.com/Lia021/hunted-birthday/master/light%20wood%20table/untitled.dae"></a-asset-item>
         <a-asset-item id="cake" src="https://rawgit.com/Lia021/hunted-birthday/master/cake/cake.dae"></a-asset-item>
        
        
-        <a-mixin id="b-mic" collada-model="#b-mic" collapse-model></a-mixin>
-
-        <a-mixin id="parent-to-right-hand" position="-0.12 -0.02 -0.09" rotation="-90 90 0" n-skeleton-parent="part: hand; side: right;" sync sync-n-skeleton-parent></a-mixin>
-
-        <a-mixin id="mask" collada-model="#mask" collapse-model></a-mixin>
-
-        <a-mixin id="eye-mask" collada-model="#eye-mask-model" collapse-model></a-mixin>
-
-        <a-mixin id="parent-to-head" position="0 0.04 -0.09" scale="1.40 1.40 1.40" rotation="0 90 0" n-skeleton-parent="part:head;" sync sync-n-skeleton-parent></a-mixin>
-
+  
       </a-assets>
       
       
-        <!-- Basic plane. -->
-  <a-box color="white"position='1 11.60 -2' opacity="0" depth="0.01" height="14" width="17" rotation="90 0 0" n-mesh-collider="type: environment; convex: false" side="double"></a-box>
+       <!-- Basic plane. -->
       
-<!--fireworks-->
+       <a-box color="white"position='1 11.60 -2' opacity="0" depth="0.01" height="14" width="17" rotation="90 0 0" n-mesh-collider="type: environment; convex: false" side="double"></a-box>
+      
+      <!--fireworks-->
+      
       <a-entity position="0 0 0" n-object='res: effects/fireworks'></a-entity>
 
       <!--sky-->
+      
       <a-sky radius="300" src="https://rawgit.com/Lia021/hunted-birthday/master/star2.jpg"></a-sky>
 
-      <!--model-->
-      <a-entity position="2 6 4" altspace-look-at>
-        <a-entity position="0 -1 -1" rotation="0 -90 0" scale="9 9 9" collada-model="#eye-blue"></a-entity>
-      </a-entity>
-
-      <!--model 2-->
-      <a-entity position="2 6 -6" altspace-look-at>
-        <a-entity position="0 -1 -1" rotation="0 -90 0" scale="9 9 9" collada-model="#eye-green"></a-entity>
-      </a-entity>
-
-      <!--model 3-->
-      <a-entity position="0 6 -0.70" altspace-look-at>
-        <a-entity position="0 -1 -1" rotation="0 -90 0" scale="9 9 9" collada-model="#eye-brown"></a-entity>
-      </a-entity>
-
-      <!--model 4-->
-
-      <a-entity position="-4.55 2.80 5.35" rotation="0 90 0" mixin="mask" instantiator="on: click;group: mask; mixin: mask parent-to-head"></a-entity>
-
-      <!--model 5-->
-
-      <a-entity position="-2.40 1.35 -5.90" mixin="b-mic" rotation="90 0 0" instantiator="on: click;group: b-mic; mixin: b-mic parent-to-right-hand"></a-entity>
-
-      <!--model 6-->
-
-      <a-entity position="-5.30 2.80 4.50" rotation="0 0 0" mixin="eye-mask" instantiator="on: click; group: mask; mixin: eye-mask parent-to-head"></a-entity>
-
+      
+     
       <!--table-->
       <a-entity position="-2.54 0.50 -5.90" scale="1.50 2.50 1.50" n-mesh-collider="type: environment; convex: false" collada-model="#table"></a-entity>
 
@@ -116,57 +55,7 @@
       <!--cake-->
       <a-entity position="-2.74 1.34 -5.90" scale="1.60 1.60 1.60"altspace-cursor-collider="enabled: false" rotation="0 -70 0" collada-model="#cake"></a-entity>
 
-
-      <!--plant1-->
-      <a-entity position="-4.55 4.05 5.10" scale="1.50 1.50 1.50" rotation="0 90 0" collada-model="#eye"></a-entity>
-      <!--plant2-->
-      <a-entity position="-4.65 4.05 5.10" scale="1.50 1.50 1.50" rotation="0 90 0" collada-model="#eye"></a-entity>
-      <!--plant3-->
-      <a-entity position="-4.62 3.95 5.09" scale="1.50 1.50 1.50" rotation="0 90 0" collada-model="#eye"></a-entity>
-
- 
-      <!--image1-->
-      <a-image position="-5.50 5.40 -1.10" src="https://rawgit.com/Lia021/hunted-birthday/master/star2.jpg" opacity="0.5" altspace-cursor-collider="enabled: false" rotation="0 90 0" width="9.50" height="9.70">
-      </a-image>
-
-      <!--image2-->
-      <a-image position="2 5 5.50" src="https://rawgit.com/Lia021/hunted-birthday/master/star2.jpg" opacity="0.5" altspace-cursor-collider="enabled: false" rotation="0 0 0" width="12" height="11">
-      </a-image>
-
-      <!--image3-->
-      <a-image position="3.20 5 -8.87" src="https://rawgit.com/Lia021/hunted-birthday/master/star2.jpg" opacity="0.5" altspace-cursor-collider="enabled: false" rotation="0 0 0" width="11.60" height="11">
-      </a-image>
-
-      <!--image4-->
-      <a-image position="4.90 0.015 -3.18" src="https://rawgit.com/Lia021/hunted-birthday/master/star.jpg" opacity="0.9" altspace-cursor-collider="enabled: false" rotation="90 0 0" width="6.60" height="8.33">
-      </a-image>
-
-      <!--image5-->
-      <a-image position="4.90 0.013 2.81" src="https://rawgit.com/Lia021/hunted-birthday/master/star.jpg" opacity="0.9" altspace-cursor-collider="enabled: false" rotation="90 0 0" width="6.60" height="2.05">
-      </a-image>
-
-      <!-- Basic circle. -->
-
-
-  <!--no-->
-<a-entity position="-2 0.10 15">
-    <a-entity id="pc-no"sync="own-on: no" sync-n-sound n-sound="on:no; src:https://cdn.rawgit.com/Lia021/sound/master/%5BSound_Effect_Knuckles_-_Oh_No_.ogg;"></a-entity>
- <a-entity  id="gear-no"sync="own-on: no" sync-n-sound n-sound="on:fae; src::https://cdn.rawgit.com/Lia021/sound/master/%5BSound%20Effect%5D%20Knuckles%20-%20Oh%20No!.mp3;"></a-entity>
- <a-box  wire="on: click; emit: no; targets: #pc-no, #gear-no;" opacity="0" depth="0.3" height="0.5" width="0.5" color="#A7B7BC"></a-box>
-    </a-entity>
- 
-     <!--yes-->
- <a-entity position="-8 0.10 17">
-      <a-entity id="pc-yes"sync="own-on: yes" sync-n-sound n-sound="on:yes; src:https://cdn.rawgit.com/Lia021/sound/master/sound_-_yes.ogg;"></a-entity>
-       <a-entity  id="gear-yes"sync="own-on: yes" sync-n-sound n-sound="on:yes; src:https://cdn.rawgit.com/Lia021/sound/master/sound%20-%20yes.mp3;"></a-entity>
-      <a-box  wire="on: click; emit: yes; targets: #pc-yes, #gear-yes;" opacity="0" depth="0.3" height="0.5" width="0.5" color="#A7B7BC"></a-box>
-    </a-entity>
- 
-
-       <!--campfire-->
-    <a-entity n-billboard n-text="fontSize: 3; text:Lia-crazy" position="2 14.05 0"></a-entity>
-      
-  
+     
   </body>
 
 </html>
