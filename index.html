@@ -24,7 +24,7 @@
  
 
   <body>
-    <a-scene altspace=fullspace:true sync-system="author: bookgirl; app: hunted house">
+    <a-scene altspace=fullspace:true sync-system="author: bookgirl; app: rocka-birthday">
       <a-assets>
         <a-asset-item id="table" src="https://rawgit.com/Lia021/hunted-birthday/master/light%20wood%20table/untitled.dae"></a-asset-item>
         <a-asset-item id="cake" src="https://rawgit.com/Lia021/hunted-birthday/master/cake/cake.dae"></a-asset-item>
@@ -36,11 +36,11 @@
       
        <!-- Basic plane. -->
       
-       <a-box color="white"position='1 11.60 -2' opacity="0" depth="0.01" height="14" width="17" rotation="90 0 0" n-mesh-collider="type: environment; convex: false" side="double"></a-box>
+       <a-box color="white"position='1.70 11.60 -1.50' opacity="0" depth="0.01" height="15" width="14" rotation="90 0 0" n-mesh-collider="type: environment; convex: false" side="double"></a-box>
       
       <!--fireworks-->
       
-      <a-entity position="0 0 0" n-object='res: effects/fireworks'></a-entity>
+      <a-entity position="0 11.60 0" n-object='res: effects/fireworks'></a-entity>
 
       <!--sky-->
       
@@ -54,6 +54,11 @@
 
       <!--cake-->
       <a-entity position="-2.74 1.34 -5.90" scale="1.60 1.60 1.60"altspace-cursor-collider="enabled: false" rotation="0 -70 0" collada-model="#cake"></a-entity>
+
+      <!--spawnintractable-blue-->
+
+      <a-entity n-spawner='res: interactables/glowstick-blue'position="0 2 0"></a-entity>
+
 
      
   </body>
