@@ -76,11 +76,8 @@
         <!-- Basic plane. -->
   <a-box color="white"position='1 11.60 -2' opacity="0" depth="0.01" height="14" width="17" rotation="90 0 0" n-mesh-collider="type: environment; convex: false" side="double"></a-box>
       
-      <!--portal-->
-     
-	<a-entity position='2 11.60 0' rotation='0 -90 0' n-portal='targetSpace: event-697299129440666604'></a-entity>
-  
-
+<!--fireworks-->
+      <a-entity position="0 0 0" n-object='res: effects/fireworks'></a-entity>
 
       <!--sky-->
       <a-sky radius="300" src="https://rawgit.com/Lia021/hunted-birthday/master/star2.jpg"></a-sky>
@@ -169,13 +166,7 @@
        <!--campfire-->
     <a-entity n-billboard n-text="fontSize: 3; text:Lia-crazy" position="2 14.05 0"></a-entity>
       
-   
-<!--inclser-->
-<a-entity position="0 2 -5" rotation="0 90 0" scale="5 5 5"
-  			n-layout-browser="url:http://ravenworks.ca/altspace/sculpTogether/?altspace-sync-instance=-Khi9B3lPwULjJxZCogl; isEnclosure:true">
-  		</a-entity>
-
-
+  
   </body>
 
 </html>
